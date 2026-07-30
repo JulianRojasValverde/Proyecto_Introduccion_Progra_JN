@@ -12,11 +12,6 @@ public class Justificacion {
         valida = false;
     }
 
-    public Justificacion(String descripcion, boolean valida) {
-        this.descripcion = descripcion;
-        this.valida = valida;
-    }
-
     public void registrarjustificacion() {
         descripcion = JOptionPane.showInputDialog(
                 null, "ingrese la descripcion de la justificacion:"
