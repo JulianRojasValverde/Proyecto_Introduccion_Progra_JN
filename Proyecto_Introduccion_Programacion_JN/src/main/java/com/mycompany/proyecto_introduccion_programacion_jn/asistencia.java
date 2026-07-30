@@ -1,4 +1,4 @@
-package com.mycompany.proyecto_introduccion_progra_jn;
+package com.mycompany.proyecto_introduccion_programacion_jn;
 
 import javax.swing.JOptionPane;
 
@@ -14,7 +14,7 @@ public class Asistencia {
         injustificada = false;
     }
 
-    public void registrarasistencia() {
+    public void registrarAsistencia() {
         fecha = JOptionPane.showInputDialog(
                 null, "ingrese la fecha de la clase:"
         );
@@ -39,7 +39,7 @@ public class Asistencia {
         );
     }
 
-    public String mostrardatos() {
+    public String mostrarDatos() {
         String informacion;
         informacion = "fecha: " + fecha
                 + "\nestado: " + estado

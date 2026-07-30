@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package com.mycompany.proyecto_introduccion_progra_jn;
+package com.mycompany.proyecto_introduccion_programacion_jn;
 
 import javax.swing.JOptionPane;
 
@@ -14,9 +14,11 @@ public class MenuPrincipal{
 
    private Estudiante estudiantes[] = new Estudiante[10];
    private Materia materias[] = new Materia[10];
+   private Asistencia asistencias[] = new Asistencia[100];
  
    private int cantidadEstudiantes = 0;
    private int cantidadMaterias = 0;
+   private int cantidadAsistencias = 0;
 
    public void mostrarMenu() {
        int opcion;
@@ -50,7 +52,7 @@ public class MenuPrincipal{
                     break;
 
                 case 4:
-                    
+                    registrarAsistencia();
                     break;
 
                 case 5:
@@ -192,5 +194,24 @@ public Estudiante buscarEstudiante(int cedulaBuscada) {
         MenuPrincipal menu = new MenuPrincipal();
 
         menu.mostrarMenu();
+    }
+
+    public void registrarAsistencia() {
+
+    if (cantidadAsistencias < asistencias.length) {
+
+        asistencias[cantidadAsistencias] = new Asistencia();
+
+        asistencias[cantidadAsistencias].registrarAsistencia();
+
+        cantidadAsistencias++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(
+                null,
+                "No se pueden registrar más asistencias."
+            );
+        }
     }
 }
