@@ -14,12 +14,6 @@ public class Nota {
         valorevaluacion = 0.0;
     }
 
-    public Nota(String tipoevaluacion, double calificacion, double valorevaluacion) {
-        this.tipoevaluacion = tipoevaluacion;
-        this.calificacion = calificacion;
-        this.valorevaluacion = valorevaluacion;
-    }
-
     public void registrarnota() {
         tipoevaluacion = JOptionPane.showInputDialog(
                 null, "ingrese el tipo de evaluacion:"
