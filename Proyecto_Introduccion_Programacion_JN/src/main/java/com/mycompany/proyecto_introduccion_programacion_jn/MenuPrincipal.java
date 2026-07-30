@@ -62,7 +62,7 @@ public class MenuPrincipal{
                     break;
 
                 case 7:
-                    
+                    verificarEstadoEstudiante();
                     break;
                     
                 case 8:
@@ -74,7 +74,10 @@ public class MenuPrincipal{
                     break;
 
                 case 10:
-                    
+                      JOptionPane.showMessageDialog(
+            null,
+            "Gracias por utilizar el sistema."
+    );
                     break;
 
                 default:
@@ -193,4 +196,46 @@ public Estudiante buscarEstudiante(int cedulaBuscada) {
 
         menu.mostrarMenu();
     }
+public static void verificarEstadoEstudiante() {
+
+    double promedioFinal;
+    int ausenciasInjustificadas;
+    String estadoAcademico;
+
+    promedioFinal = Double.parseDouble(
+            JOptionPane.showInputDialog(
+                    null,
+                    "Ingrese el promedio final:"
+            )
+    );
+
+    ausenciasInjustificadas = Integer.parseInt(
+            JOptionPane.showInputDialog(
+                    null,
+                    "Ingrese las ausencias injustificadas:"
+            )
+    );
+
+    if (ausenciasInjustificadas > 3) {
+
+        estadoAcademico = "REPROBADO POR AUSENCIAS";
+
+    } else if (promedioFinal >= 70) {
+
+        estadoAcademico = "APROBADO";
+
+    } else {
+
+        estadoAcademico = "REPROBADO";
+    }
+
+    JOptionPane.showMessageDialog(
+            null,
+            "Promedio final: " + promedioFinal
+            + "\nAusencias injustificadas: "
+            + ausenciasInjustificadas
+            + "\nEstado académico: "
+            + estadoAcademico
+    );
+}
 }
