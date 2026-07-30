@@ -14,12 +14,6 @@ public class Asistencia {
         injustificada = false;
     }
 
-    public Asistencia(String fecha, String estado, boolean injustificada) {
-        this.fecha = fecha;
-        this.estado = estado;
-        this.injustificada = injustificada;
-    }
-
     public void registrarasistencia() {
         fecha = JOptionPane.showInputDialog(
                 null, "ingrese la fecha de la clase:"
