@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package com.mycompany.proyecto_introduccion_progra_jn;
+package com.mycompany.proyecto_introduccion_programacion_jn;
 
 import javax.swing.JOptionPane;
 
@@ -12,12 +12,18 @@ import javax.swing.JOptionPane;
  */
 public class MenuPrincipal{
 
-   private Estudiante estudiantes[] = new Estudiante[10];
-   private Materia materias[] = new Materia[10];
+   private Estudiante estudiantes[] = new Estudiante[100];
+   private Materia materias[] = new Materia[100];
+   private Asistencia asistencias[] = new Asistencia[100];
+   private Nota notas[] = new Nota[100];
+   private Justificacion justificaciones[] = new Justificacion[100];
  
    private int cantidadEstudiantes = 0;
    private int cantidadMaterias = 0;
-
+   private int cantidadAsistencias = 0;
+   private int cantidadNotas = 0;
+   private int cantidadJustificaciones = 0;
+   
    public void mostrarMenu() {
        int opcion;
        do {
@@ -46,15 +52,15 @@ public class MenuPrincipal{
                     break;
 
                 case 3:
-                    
+                    registrarNota();
                     break;
 
                 case 4:
-                    
+                    registrarAsistencia();
                     break;
 
                 case 5:
-                    
+                    registrarJustificacion();
                     break;
 
                 case 6:
@@ -100,9 +106,7 @@ public class MenuPrincipal{
 
         } else {
 
-            JOptionPane.showMessageDialog(
-                    null,"No se pueden registrar más estudiantes."
-            );
+            JOptionPane.showMessageDialog(null,"No se pueden registrar más estudiantes.");
         }
     }
 
@@ -110,18 +114,14 @@ public void registrarMateria() {
 
     if (cantidadEstudiantes == 0) {
 
-        JOptionPane.showMessageDialog(
-                null,"Primero debe registrar un estudiante."
-        );
+        JOptionPane.showMessageDialog(null,"Primero debe registrar un estudiante.");
 
     } else if (cantidadMaterias < materias.length) {
 
         int cedulaBuscada;
 
         cedulaBuscada = Integer.parseInt(
-                JOptionPane.showInputDialog(
-                        null,"Ingrese la cédula del estudiante:"
-                )
+                JOptionPane.showInputDialog(null,"Ingrese la cédula del estudiante:")
         );
 
         Estudiante estudianteEncontrado;
@@ -142,16 +142,12 @@ public void registrarMateria() {
 
         } else {
 
-            JOptionPane.showMessageDialog(
-                    null,"No existe un estudiante con esa cédula."
-            );
+            JOptionPane.showMessageDialog(null,"No existe un estudiante con esa cédula.");
         }
 
     } else {
 
-        JOptionPane.showMessageDialog(
-                null,"No se pueden registrar más materias."
-        );
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más materias.");
     }
 }
 public Estudiante buscarEstudiante(int cedulaBuscada) {
@@ -169,9 +165,7 @@ public Estudiante buscarEstudiante(int cedulaBuscada) {
 }
     public void calcularPromedio() {
 
-        JOptionPane.showMessageDialog(
-                null,"Aqui intenten cuadrar las cosas que use revisen el Promedio.java"
-        );
+        JOptionPane.showMessageDialog(null,"Aqui intenten cuadrar las cosas que use revisen el Promedio.java");
     }
 
     public Estudiante[] getEstudiantes() {
@@ -238,4 +232,50 @@ public static void verificarEstadoEstudiante() {
             + estadoAcademico
     );
 }
+
+    public void registrarAsistencia() {
+
+    if (cantidadAsistencias < asistencias.length) {
+
+        asistencias[cantidadAsistencias] = new Asistencia();
+
+        asistencias[cantidadAsistencias].registrarAsistencia();
+
+        cantidadAsistencias++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más asistencias.");
+        }
+    }
+    public void registrarNota() {
+
+    if (cantidadNotas < notas.length) {
+
+        notas[cantidadNotas] = new Nota();
+
+        notas[cantidadNotas].registrarnota();
+
+        cantidadNotas++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más notas.");
+        }
+    }
+    public void registrarJustificacion() {
+
+    if (cantidadJustificaciones < justificaciones.length) {
+
+        justificaciones[cantidadJustificaciones] = new Justificacion();
+
+        justificaciones[cantidadJustificaciones].registrarjustificacion();
+
+        cantidadJustificaciones++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más justificaciones.");
+        }
+    }
 }
