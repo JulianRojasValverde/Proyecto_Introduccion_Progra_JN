@@ -1,4 +1,4 @@
-package proyecto;
+package com.mycompany.proyecto_introduccion_progra_jn;
 
 import javax.swing.JOptionPane;
 
