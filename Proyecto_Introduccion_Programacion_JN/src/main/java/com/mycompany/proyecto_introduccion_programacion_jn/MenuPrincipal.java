@@ -70,7 +70,22 @@ public class MenuPrincipal{
                     break;
 
                 case 9:
+<<<<<<< HEAD
                     generarReporte();
+=======
+                    
+                    break;
+
+                case 10:
+                      JOptionPane.showMessageDialog(
+            null,
+            "Gracias por utilizar el sistema."
+    );
+                    break;
+
+                default:
+                    
+>>>>>>> 923a13c18abbcba213fab270f65cbd72106c86b4
                     break;
             }
 
@@ -296,4 +311,95 @@ public class MenuPrincipal{
 
         menu.mostrarMenu();
     }
+<<<<<<< HEAD
+=======
+public static void verificarEstadoEstudiante() {
+
+    double promedioFinal;
+    int ausenciasInjustificadas;
+    String estadoAcademico;
+
+    promedioFinal = Double.parseDouble(
+            JOptionPane.showInputDialog(
+                    null,
+                    "Ingrese el promedio final:"
+            )
+    );
+
+    ausenciasInjustificadas = Integer.parseInt(
+            JOptionPane.showInputDialog(
+                    null,
+                    "Ingrese las ausencias injustificadas:"
+            )
+    );
+
+    if (ausenciasInjustificadas > 3) {
+
+        estadoAcademico = "REPROBADO POR AUSENCIAS";
+
+    } else if (promedioFinal >= 70) {
+
+        estadoAcademico = "APROBADO";
+
+    } else {
+
+        estadoAcademico = "REPROBADO";
+    }
+
+    JOptionPane.showMessageDialog(
+            null,
+            "Promedio final: " + promedioFinal
+            + "\nAusencias injustificadas: "
+            + ausenciasInjustificadas
+            + "\nEstado académico: "
+            + estadoAcademico
+    );
+}
+
+    public void registrarAsistencia() {
+
+    if (cantidadAsistencias < asistencias.length) {
+
+        asistencias[cantidadAsistencias] = new Asistencia();
+
+        asistencias[cantidadAsistencias].registrarAsistencia();
+
+        cantidadAsistencias++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más asistencias.");
+        }
+    }
+    public void registrarNota() {
+
+    if (cantidadNotas < notas.length) {
+
+        notas[cantidadNotas] = new Nota();
+
+        notas[cantidadNotas].registrarnota();
+
+        cantidadNotas++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más notas.");
+        }
+    }
+    public void registrarJustificacion() {
+
+    if (cantidadJustificaciones < justificaciones.length) {
+
+        justificaciones[cantidadJustificaciones] = new Justificacion();
+
+        justificaciones[cantidadJustificaciones].registrarjustificacion();
+
+        cantidadJustificaciones++;
+
+    } else {
+
+        JOptionPane.showMessageDialog(null,"No se pueden registrar más justificaciones.");
+        }
+    }
+>>>>>>> 923a13c18abbcba213fab270f65cbd72106c86b4
 }
