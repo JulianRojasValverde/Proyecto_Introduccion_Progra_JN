@@ -57,7 +57,7 @@ public class Reporte {
  
         String informacion;
  
-        informacion = "REPORTE ACADÉMICO"
+        informacion = "REPORTE ACADÉMICO\n\n"
             + estudiante.mostrarDatos()
             + "\n\nMateria: " + materia.getNombreMateria()
             + "\nCódigo: " + materia.getCodigoMateria()

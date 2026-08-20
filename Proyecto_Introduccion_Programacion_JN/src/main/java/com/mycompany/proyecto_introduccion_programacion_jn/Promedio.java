@@ -1,4 +1,4 @@
-package com.mycompany.proyecto_introduccion_progra_jn;
+package com.mycompany.proyecto_introduccion_programacion_jn;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
